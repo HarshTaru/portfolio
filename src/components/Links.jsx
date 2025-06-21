@@ -251,7 +251,7 @@ const Links = () => {
                         onClick={() => window.location.href = 'mailto:taruharsh3093@gmail.com'}
                     >
                         <span className="animate-pulse">💬</span>
-                        Have a question? Drop a mail!
+                        Have any questions ? Drop a mail!
                     </button>
 
                 </div>
