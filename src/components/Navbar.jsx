@@ -52,7 +52,7 @@ const Navbar = () => {
         setDownloadStatus('downloading');
         
         const link = document.createElement('a');
-        link.href = '/resume.pdf'; // Make sure your resume.pdf is in the public folder
+        link.href = '/portfolio/resume.pdf'; 
         link.download = 'Harsh_Taru_Resume.pdf';
         document.body.appendChild(link);
         link.click();

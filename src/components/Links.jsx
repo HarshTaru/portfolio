@@ -11,7 +11,7 @@ const Links = () => {
         
         // Create a temporary link element to trigger download
         const link = document.createElement('a');
-        link.href = '/resume.pdf';
+        link.href = '/portfolio/resume.pdf';
         link.download = 'Harsh_Taru_Resume.pdf'; // This suggests a filename for download
         document.body.appendChild(link);
         link.click();
