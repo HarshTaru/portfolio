@@ -9,6 +9,7 @@ import {
   faSpinner
 } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '../context/ThemeContext';
+import { sendEmail } from '../utils/sendEmail'; // Adjust path if needed
 
 const Contact = () => {
   const { darkMode } = useTheme();
@@ -47,21 +48,24 @@ const Contact = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    // Reset form after success animation
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  const { success } = await sendEmail(formData);
+
+  setIsSubmitting(false);
+  setIsSubmitted(success);
+
+  if (success) {
     setTimeout(() => {
       setIsSubmitted(false);
       setFormData({ name: '', email: '', message: '' });
     }, 3000);
-  };
+  } else {
+    alert('Something went wrong. Please try again.');
+  }
+};
+
 
   const floatingElements = Array.from({ length: 8 }, (_, i) => (
     <div
