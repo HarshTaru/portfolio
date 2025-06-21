@@ -260,7 +260,7 @@ const Hero = () => {
                                 <div className="relative group">
                                     {/* Replace with your animated GIF */}
                                     <img
-                                        src="/src/assets/profile-animation.gif"
+                                        src="/public/profile-animation.gif"
                                         alt="Harsh Taru - Animated Profile"
                                         className="w-full max-w-lg mx-auto transition-all duration-500 group-hover:scale-105"
                                     />
