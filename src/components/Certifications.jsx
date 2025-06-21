@@ -296,56 +296,64 @@ const Certifications = () => {
     }
   ];
 
-  const filteredCertifications = activeFilter === 'All'
-    ? certifications
-    : certifications.filter(cert => cert.category === activeFilter);
+const filteredCertifications = activeFilter === 'All'
+  ? certifications
+  : certifications.filter(cert => cert.category === activeFilter);
 
-  const getStatusColor = (status) => {
-    switch (status) {
-      case 'Certified':
-        return darkMode ? 'bg-green-900 text-green-200 border-green-800' : 'bg-green-100 text-green-700 border-green-200';
-      case 'In Progress':
-        return darkMode ? 'bg-yellow-900 text-yellow-200 border-yellow-800' : 'bg-yellow-100 text-yellow-700 border-yellow-200';
-      case 'Expired':
-        return darkMode ? 'bg-red-900 text-red-200 border-red-800' : 'bg-red-100 text-red-700 border-red-200';
-      default:
-        return darkMode ? 'bg-gray-900 text-gray-200 border-gray-800' : 'bg-gray-100 text-gray-700 border-gray-200';
-    }
+// Add state for view all toggle (add this to your component's state)
+const [showAll, setShowAll] = useState(false);
+const INITIAL_DISPLAY_COUNT = 6; // Show 6 certifications initially
+
+// Determine which certifications to display
+const displayedCertifications = showAll 
+  ? filteredCertifications 
+  : filteredCertifications.slice(0, INITIAL_DISPLAY_COUNT);
+
+const getStatusColor = (status) => {
+  switch (status) {
+    case 'Certified':
+      return darkMode ? 'bg-green-900 text-green-200 border-green-800' : 'bg-green-100 text-green-700 border-green-200';
+    case 'In Progress':
+      return darkMode ? 'bg-yellow-900 text-yellow-200 border-yellow-800' : 'bg-yellow-100 text-yellow-700 border-yellow-200';
+    case 'Expired':
+      return darkMode ? 'bg-red-900 text-red-200 border-red-800' : 'bg-red-100 text-red-700 border-red-200';
+    default:
+      return darkMode ? 'bg-gray-900 text-gray-200 border-gray-800' : 'bg-gray-100 text-gray-700 border-gray-200';
+  }
+};
+
+const getCategoryIcon = (category) => {
+  const icons = {
+    'All': '🏆',
+    'Software Testing': '🧪',
+    'Web Development': '🌐',
+    'Cloud': '☁️',
+    'Backend': '⚙️',
+    'Database': '🗄️',
+    'DevOps': '🚀',
+    'Programming': '💻',
+    'Data Science': '📊',
+    'Design': '🎨'
   };
+  return icons[category] || '📜';
+};
 
-  const getCategoryIcon = (category) => {
-    const icons = {
-      'All': '🏆',
-      'Software Testing': '🧪',
-      'Web Development': '🌐',
-      'Cloud': '☁️',
-      'Backend': '⚙️',
-      'Database': '🗄️',
-      'DevOps': '🚀',
-      'Programming': '💻',
-      'Data Science': '📊',
-      'Design': '🎨'
-    };
-    return icons[category] || '📜';
-  };
+const getStatusIcon = (status) => {
+  switch (status) {
+    case 'Certified':
+      return '✅';
+    case 'In Progress':
+      return '⏳';
+    case 'Expired':
+      return '❌';
+    default:
+      return '📜';
+  }
+};
 
-  const getStatusIcon = (status) => {
-    switch (status) {
-      case 'Certified':
-        return '✅';
-      case 'In Progress':
-        return '⏳';
-      case 'Expired':
-        return '❌';
-      default:
-        return '📜';
-    }
-  };
-
-  return (
-
-    <section id="certifications">
-    <div  className={`${darkMode ? 'bg-gray-900' : 'bg-gray-50'} min-h-screen py-20 transition-colors duration-300`}>
+return (
+  <section id="certifications">
+    <div className={`${darkMode ? 'bg-gray-900' : 'bg-gray-50'} min-h-screen py-20 transition-colors duration-300`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
           <h2 className={`text-3xl sm:text-4xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
@@ -354,7 +362,6 @@ const Certifications = () => {
           <p className={`text-base sm:text-lg max-w-3xl mx-auto ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
             Professional certifications and achievements that validate my technical expertise
           </p>
-          
         </div>
 
         {/* Filter Buttons */}
@@ -366,14 +373,17 @@ const Certifications = () => {
             return (
               <button
                 key={category}
-                onClick={() => setActiveFilter(category)}
+                onClick={() => {
+                  setActiveFilter(category);
+                  setShowAll(false); // Reset to collapsed view when changing filters
+                }}
                 className={`px-3 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-colors duration-150 flex items-center gap-1 sm:gap-2 text-sm sm:text-base ${isActive
                   ? 'bg-blue-600 text-white shadow-lg hover:bg-blue-700'
                   : darkMode
                     ? 'bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-700'
                     : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 shadow-sm'
                   }`}
-                  >
+              >
                 <span className="text-sm sm:text-lg">{getCategoryIcon(category)}</span>
                 <span className="hidden sm:inline">{category}</span>
                 <span className="sm:hidden">{category === 'Web Development' ? 'Web' : category === 'Software Testing' ? 'Testing' : category === 'Data Science' ? 'Data' : category}</span>
@@ -392,7 +402,7 @@ const Certifications = () => {
 
         {/* Certifications Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {filteredCertifications.map((cert, index) => (
+          {displayedCertifications.map((cert, index) => (
             <div
               key={index}
               className={`group relative p-4 sm:p-6 rounded-2xl border shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col
@@ -414,7 +424,7 @@ const Certifications = () => {
                         e.target.style.display = 'none';
                         e.target.nextSibling.style.display = 'flex';
                       }}
-                      />
+                    />
                     <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-300 rounded hidden items-center justify-center text-xs">
                       📜
                     </div>
@@ -477,8 +487,8 @@ const Certifications = () => {
                         ? 'bg-blue-600 text-white hover:bg-blue-700'
                         : 'bg-blue-600 text-white hover:bg-blue-700'
                       }`}
-                      onClick={() => window.open(cert.verifyUrl, '_blank')}
-                      >
+                    onClick={() => window.open(cert.verifyUrl, '_blank')}
+                  >
                     🔗 Verify Certificate
                   </button>
                 )}
@@ -487,10 +497,36 @@ const Certifications = () => {
           ))}
         </div>
 
+        {/* View All / Show Less Button */}
+        {filteredCertifications.length > INITIAL_DISPLAY_COUNT && (
+          <div className="text-center mt-8">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1
+                ${darkMode
+                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700'
+                  : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700'
+                }`}
+            >
+              <span>{showAll ? '📤 Show Less Certificates' : '📥 View All Certificates'}</span>
+              <span className={`px-2 py-1 rounded-full text-xs font-medium
+                ${darkMode ? 'bg-white/20' : 'bg-white/20'}`}>
+                {showAll 
+                  ? `Hide ${filteredCertifications.length - INITIAL_DISPLAY_COUNT}` 
+                  : `+${filteredCertifications.length - INITIAL_DISPLAY_COUNT} more`
+                }
+              </span>
+              <span className={`transform transition-transform duration-300 ${showAll ? 'rotate-180' : ''}`}>
+                ⬇️
+              </span>
+            </button>
+          </div>
+        )}
+
         {/* Results Count */}
         <div className="text-center mt-12">
           <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-            Showing {filteredCertifications.length} of {certifications.length} certifications
+            Showing {displayedCertifications.length} of {filteredCertifications.length} certifications
             {activeFilter !== 'All' && (
               <span className="ml-2">
                 in <span className="font-semibold">{activeFilter}</span>
@@ -520,7 +556,7 @@ const Certifications = () => {
                 color: "blue"
               }, 
               {
-                label: "IBM Certs",
+                label: "IBM Certifications",
                 value: 15,
                 icon: "🔷",
                 color: "blue"
@@ -546,8 +582,8 @@ const Certifications = () => {
         </div>
       </div>
     </div>
-                </section>
-  );
-};
+  </section>
+);
+}
 
 export default Certifications;

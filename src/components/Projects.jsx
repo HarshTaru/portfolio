@@ -240,11 +240,11 @@ const Projects = () => {
         <div className="text-center mt-12">
           <button
             onClick={() => setShowAll(!showAll)}
-            className={`inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
-              darkMode
-                ? 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white border border-gray-600'
-                : 'bg-white text-gray-600 hover:bg-gray-50 hover:text-black border border-gray-300 shadow-sm'
-            }`}
+            className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1
+                ${darkMode
+                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700'
+                  : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700'
+                }`}
           >
             {showAll ? 'Show Less Projects' : 'View All Projects'} 
             <FontAwesomeIcon 

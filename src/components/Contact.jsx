@@ -94,14 +94,6 @@ const Contact = () => {
         {/* Floating particles */}
         {floatingElements}
         
-        {/* Gradient orbs */}
-        {/* <div className={`absolute -top-40 -right-40 w-80 h-80 rounded-full blur-3xl opacity-10 animate-pulse ${
-          darkMode ? 'bg-gradient-to-br from-blue-500 to-purple-600' : 'bg-gradient-to-br from-blue-300 to-purple-400'
-        }`}></div>
-        <div className={`absolute -bottom-40 -left-40 w-80 h-80 rounded-full blur-3xl opacity-10 animate-pulse ${
-          darkMode ? 'bg-gradient-to-br from-purple-500 to-pink-600' : 'bg-gradient-to-br from-purple-300 to-pink-400'
-        }`} style={{ animationDelay: '2s' }}></div> */}
-        
         {/* Animated email icons */}
         <div className="absolute top-1/4 left-10 opacity-5 animate-bounce" style={{ animationDelay: '1s' }}>
           <FontAwesomeIcon icon={faEnvelope} className="text-6xl text-blue-500" />
@@ -161,7 +153,9 @@ const Contact = () => {
                 <div className="relative">
                   <FontAwesomeIcon 
                     icon={faUser} 
-                    className={`absolute left-3 top-3.5 text-gray-400 transition-colors duration-200 group-focus-within:text-blue-500`} 
+                    className={`absolute left-3 top-3.5 z-10 pointer-events-none transition-colors duration-200 ${
+                      darkMode ? 'text-gray-400' : 'text-gray-500'
+                    }`}
                   />
                   <input
                     type="text"
@@ -192,7 +186,9 @@ const Contact = () => {
                 <div className="relative">
                   <FontAwesomeIcon 
                     icon={faEnvelope} 
-                    className={`absolute left-3 top-3.5 text-gray-400 transition-colors duration-200 group-focus-within:text-blue-500`} 
+                    className={`absolute left-3 top-3.5 z-10 pointer-events-none transition-colors duration-200 ${
+                      darkMode ? 'text-gray-400' : 'text-gray-500'
+                    }`}
                   />
                   <input
                     type="email"
@@ -223,7 +219,9 @@ const Contact = () => {
                 <div className="relative">
                   <FontAwesomeIcon 
                     icon={faCommentDots} 
-                    className={`absolute left-3 top-3.5 text-gray-400 transition-colors duration-200 group-focus-within:text-blue-500`} 
+                    className={`absolute left-3 top-3.5 z-10 pointer-events-none transition-colors duration-200 ${
+                      darkMode ? 'text-gray-400' : 'text-gray-500'
+                    }`}
                   />
                   <textarea
                     id="message"
