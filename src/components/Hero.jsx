@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { Typewriter } from 'react-simple-typewriter';
-
 const Hero = () => {
     const { darkMode } = useTheme();
     const [isVisible, setIsVisible] = useState(false);
@@ -49,7 +48,7 @@ const Hero = () => {
         }`}>
             
             
-            <div className="max-w-9xl mx-auto px-6 relative z-10 pt-32 pb-24">
+            <div className="max-w-8xl mx-auto px-6 relative z-10 pt-32 pb-24">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
                     
                     {/* Left Content */}
@@ -260,7 +259,7 @@ const Hero = () => {
                                 <div className="relative group">
                                     {/* Replace with your animated GIF */}
                                     <img
-                                        src="/profile-animation.gif"
+                                        src="/src/assets/profile-animation.gif"
                                         alt="Harsh Taru - Animated Profile"
                                         className="w-full max-w-lg mx-auto transition-all duration-500 group-hover:scale-105"
                                     />

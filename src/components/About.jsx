@@ -17,6 +17,7 @@ const About = () => {
   const { darkMode } = useTheme();
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState('skills');
+  const [downloadStatus, setDownloadStatus] = useState('');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,6 +36,41 @@ const About = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  // Enhanced resume download handler
+  const handleResumeDownload = (e) => {
+    e.preventDefault();
+    
+    // Show download initiated status
+    setDownloadStatus('downloading');
+    
+    try {
+      // Create a temporary link element to trigger download
+      const link = document.createElement('a');
+      link.href = '/resume.pdf';
+      link.download = 'Harsh_Taru_Resume.pdf'; // Suggests filename for download
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Show success status
+      setDownloadStatus('success');
+      
+      // Reset status after 3 seconds
+      setTimeout(() => {
+        setDownloadStatus('');
+      }, 3000);
+      
+    } catch (error) {
+      console.error('Download failed:', error);
+      setDownloadStatus('error');
+      
+      // Reset status after 3 seconds
+      setTimeout(() => {
+        setDownloadStatus('');
+      }, 3000);
+    }
+  };
 
   const highlights = [
     { icon: faCode, text: '5⭐ Python Coder', color: 'text-yellow-500' },
@@ -64,6 +100,38 @@ const About = () => {
       content: 'Passionate about building scalable backend systems and solving complex problems. I believe in continuous learning and have earned certifications in AWS, Docker, Kubernetes, and Python for Data Science to stay ahead of the curve.'
     }
   };
+
+  // Get button text and styling based on download status
+  const getDownloadButtonContent = () => {
+    switch (downloadStatus) {
+      case 'downloading':
+        return {
+          text: 'Downloading...',
+          icon: faDownload,
+          className: 'animate-pulse opacity-75 cursor-not-allowed'
+        };
+      case 'success':
+        return {
+          text: 'Downloaded!',
+          icon: faDownload,
+          className: 'bg-green-600 hover:bg-green-700'
+        };
+      case 'error':
+        return {
+          text: 'Try Again',
+          icon: faDownload,
+          className: 'bg-red-600 hover:bg-red-700'
+        };
+      default:
+        return {
+          text: 'Download Resume',
+          icon: faDownload,
+          className: ''
+        };
+    }
+  };
+
+  const downloadButtonContent = getDownloadButtonContent();
 
   return (
     <section
@@ -164,27 +232,32 @@ const About = () => {
               ))}
             </div>
 
-
-            {/* Call to action buttons */}
+            {/* Call to action buttons with enhanced download */}
             <div className={`flex flex-col sm:flex-row justify-center lg:justify-start gap-4 transition-all duration-1000 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`} style={{ transitionDelay: '800ms' }}>
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              {/* Enhanced Download Resume Button */}
+              <button
+                onClick={handleResumeDownload}
+                disabled={downloadStatus === 'downloading'}
                 className={`group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl ${
-                  darkMode
+                  downloadButtonContent.className ||
+                  (darkMode
                     ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700'
-                    : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700'
-                }`}
+                    : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700')
+                } ${downloadStatus === 'downloading' ? 'cursor-not-allowed' : 'cursor-pointer'}`}
               >
                 <FontAwesomeIcon 
-                  icon={faDownload} 
-                  className="group-hover:animate-bounce" 
+                  icon={downloadButtonContent.icon} 
+                  className={`${downloadStatus === 'downloading' ? 'animate-spin' : 'group-hover:animate-bounce'}`}
                 />
-                Download Resume
-              </a>
+                {downloadButtonContent.text}
+                {downloadStatus === 'success' && (
+                  <span className="ml-1 text-green-200">✓</span>
+                )}
+              </button>
+
+              {/* Connect Button */}
               <a
                 href="#contact"
                 className={`group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full border-2 font-semibold transition-all duration-300 transform hover:scale-105 ${
@@ -200,6 +273,28 @@ const About = () => {
                 Let's Connect
               </a>
             </div>
+
+
+            {/* Download Status Message */}
+            {downloadStatus && (
+              <div className={`mt-4 transition-all duration-300 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}>
+                <div className="flex justify-center lg:justify-start">
+                  <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium ${
+                    downloadStatus === 'success'
+                      ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+                      : downloadStatus === 'error'
+                      ? 'bg-red-500/20 text-red-400 border border-red-500/30'
+                      : 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+                  }`}>
+                    {downloadStatus === 'success' && '✓ Resume downloaded successfully!'}
+                    {downloadStatus === 'error' && '✗ Download failed. Please try again.'}
+                    {downloadStatus === 'downloading' && '↓ Preparing download...'}
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

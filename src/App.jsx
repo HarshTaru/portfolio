@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './index.css'; // Ensure global styles are imported
 import Certifications from './components/Certifications';
+import Links from './components/Links';
 const App = () => {
     return (
         <div className="overflow-x-hidden">
@@ -20,6 +21,7 @@ const App = () => {
             <Certifications />
             <About />
             <Contact />
+            <Links />
             <Footer /> 
         </div>
     );

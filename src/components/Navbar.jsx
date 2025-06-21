@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
-import { Moon, Sun, Menu, X, Code, Sparkles } from 'lucide-react';
+import { Moon, Sun, Menu, X, Code, Sparkles, Download, FileText } from 'lucide-react';
 
 const Navbar = () => {
     const { darkMode, setDarkMode } = useTheme();
     const [menuOpen, setMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState('');
+    const [downloadStatus, setDownloadStatus] = useState(null);
 
     // Handle scroll effect for navbar background
     useEffect(() => {
@@ -44,6 +45,24 @@ const Navbar = () => {
     const toggleTheme = () => {
         setDarkMode(!darkMode);
         document.documentElement.classList.toggle('dark');
+    };
+
+    // Resume download function
+    const downloadResume = () => {
+        setDownloadStatus('downloading');
+        
+        const link = document.createElement('a');
+        link.href = '/resume.pdf'; // Make sure your resume.pdf is in the public folder
+        link.download = 'Harsh_Taru_Resume.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        // Show success feedback
+        setDownloadStatus('success');
+        setTimeout(() => {
+            setDownloadStatus(null);
+        }, 2000);
     };
 
     const navLinks = [
@@ -126,6 +145,41 @@ const Navbar = () => {
                             </a>
                         ))}
 
+                        {/* Resume Download Button - Desktop */}
+                        <button
+                            onClick={downloadResume}
+                            disabled={downloadStatus === 'downloading'}
+                            className={`group relative flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 border-2 ${
+                                downloadStatus === 'success'
+                                    ? 'bg-green-500 text-white border-green-500'
+                                    : downloadStatus === 'downloading'
+                                        ? darkMode
+                                            ? 'bg-gray-700 text-gray-400 border-gray-600 cursor-not-allowed'
+                                            : 'bg-gray-200 text-gray-500 border-gray-300 cursor-not-allowed'
+                                        : darkMode
+                                            ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white border-purple-500 hover:from-purple-500 hover:to-blue-500'
+                                            : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white border-blue-500 hover:from-blue-500 hover:to-purple-500'
+                            }`}
+                        >
+                            <div className="relative overflow-hidden">
+                                {downloadStatus === 'success' ? (
+                                    <span className="text-sm">✓</span>
+                                ) : downloadStatus === 'downloading' ? (
+                                    <Download className="w-4 h-4 animate-bounce" />
+                                ) : (
+                                    <FileText className="w-4 h-4 group-hover:scale-110 transition-transform duration-200" />
+                                )}
+                            </div>
+                            <span className="font-semibold">
+                                {downloadStatus === 'success' 
+                                    ? 'Downloaded!' 
+                                    : downloadStatus === 'downloading' 
+                                        ? 'Downloading...' 
+                                        : 'Resume'
+                                }
+                            </span>
+                        </button>
+
                         {/* Enhanced Theme Toggle */}
                         <button
                             onClick={toggleTheme}
@@ -156,6 +210,32 @@ const Navbar = () => {
 
                     {/* Mobile Controls */}
                     <div className="flex items-center gap-2 md:hidden">
+                        {/* Mobile Resume Download */}
+                        <button
+                            onClick={downloadResume}
+                            disabled={downloadStatus === 'downloading'}
+                            className={`p-2 rounded-lg transition-all duration-300 hover:scale-110 ${
+                                downloadStatus === 'success'
+                                    ? 'text-green-500 bg-green-100 dark:bg-green-900/30'
+                                    : downloadStatus === 'downloading'
+                                        ? darkMode
+                                            ? 'text-gray-500 cursor-not-allowed'
+                                            : 'text-gray-400 cursor-not-allowed'
+                                        : darkMode
+                                            ? 'text-purple-400 hover:bg-gray-800'
+                                            : 'text-blue-600 hover:bg-blue-50'
+                            }`}
+                            aria-label="Download resume"
+                        >
+                            {downloadStatus === 'success' ? (
+                                <span className="text-lg">✓</span>
+                            ) : downloadStatus === 'downloading' ? (
+                                <Download className="w-5 h-5 animate-bounce" />
+                            ) : (
+                                <FileText className="w-5 h-5 hover:scale-110 transition-transform duration-200" />
+                            )}
+                        </button>
+
                         {/* Mobile Theme Toggle */}
                         <button
                             onClick={toggleTheme}
@@ -254,6 +334,43 @@ const Navbar = () => {
                                     )}
                                 </div>
                             ))}
+
+                            {/* Mobile Resume Download in Menu */}
+                            <div className={`my-2 border-t ${darkMode ? 'border-gray-700/50' : 'border-gray-200/50'}`}></div>
+                            <button
+                                onClick={downloadResume}
+                                disabled={downloadStatus === 'downloading'}
+                                className={`group w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
+                                    downloadStatus === 'success'
+                                        ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+                                        : downloadStatus === 'downloading'
+                                            ? darkMode
+                                                ? 'bg-gray-700/50 text-gray-500 cursor-not-allowed'
+                                                : 'bg-gray-200/50 text-gray-400 cursor-not-allowed'
+                                            : darkMode
+                                                ? 'text-purple-400 hover:text-purple-300 hover:bg-purple-500/10 border border-purple-500/20'
+                                                : 'text-blue-600 hover:text-blue-700 hover:bg-blue-500/10 border border-blue-500/20'
+                                }`}
+                            >
+                                <span className="text-base group-hover:scale-110 transition-transform duration-200">
+                                    {downloadStatus === 'success' ? '✅' : downloadStatus === 'downloading' ? '⏳' : '📄'}
+                                </span>
+                                <span className="flex-1">
+                                    {downloadStatus === 'success' 
+                                        ? 'Resume Downloaded!' 
+                                        : downloadStatus === 'downloading' 
+                                            ? 'Downloading Resume...' 
+                                            : 'Download Resume'
+                                    }
+                                </span>
+                                
+                                {/* Download icon */}
+                                {downloadStatus === 'downloading' ? (
+                                    <Download className="w-4 h-4 animate-bounce" />
+                                ) : downloadStatus !== 'success' && (
+                                    <FileText className="w-4 h-4 group-hover:scale-110 transition-transform duration-200" />
+                                )}
+                            </button>
                         </div>
 
                         {/* Mobile Menu Footer */}
