@@ -104,7 +104,7 @@ const Links = () => {
     const allLinks = [...socialLinks, ...additionalLinks];
 
     return (
-        <section className={`py-8 transition-all duration-500 ${
+        <section className={`py-20 transition-all duration-500 ${
             darkMode ? 'bg-gray-900' : 'bg-gray-50'
         }`}>
             <div className="max-w-6xl mx-auto px-6">

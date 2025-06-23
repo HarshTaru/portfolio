@@ -352,7 +352,7 @@ const getStatusIcon = (status) => {
 
 return (
   <section id="certifications">
-    <div className={`${darkMode ? 'bg-gray-900' : 'bg-gray-50'} min-h-screen py-8 transition-colors duration-300`}>
+    <div className={`${darkMode ? 'bg-gray-900' : 'bg-gray-50'} min-h-screen py-20 transition-colors duration-300`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10">
           <h2 className={`text-3xl sm:text-4xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>

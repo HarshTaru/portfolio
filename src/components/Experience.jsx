@@ -51,7 +51,7 @@ const Experience = () => {
   const { darkMode } = useTheme();
 
 return (
-    <section id="experience" className={`py-8 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'} transition-colors duration-300`}>
+    <section id="experience" className={`py-20 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'} transition-colors duration-300`}>
         <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-16">
                 <h2 className={`text-4xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>

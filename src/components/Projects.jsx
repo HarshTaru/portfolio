@@ -129,7 +129,7 @@ const Projects = () => {
   const displayedProjects = showAll ? allProjects : featuredProjects;
 
   return (
-    <section id="work" className={`${darkMode ? 'bg-gray-900' : 'bg-gray-50'} py-8 transition-colors duration-300`}>
+    <section id="work" className={`${darkMode ? 'bg-gray-900' : 'bg-gray-50'} py-20 transition-colors duration-300`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className={`text-4xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>

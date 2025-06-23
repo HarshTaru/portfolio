@@ -167,7 +167,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className={`py-8 relative overflow-hidden transition-colors duration-300 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'
+      className={`py-20 relative overflow-hidden transition-colors duration-300 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'
         }`}
     >
 

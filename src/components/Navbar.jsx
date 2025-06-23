@@ -97,11 +97,12 @@ const Navbar = () => {
     };
 
     const navLinks = [
-        { id: 'work', label: 'Work', icon: '💼' },
+        { id: 'experience', label: 'Experience', icon: '🧑‍💼' },
+        { id: 'work', label: 'Projects', icon: '💼' },
         { id: 'skills', label: 'Skills', icon: '⚡' },
         { id: 'certifications', label: 'Certifications', icon: '🏆' },
         { id: 'about', label: 'About', icon: '👨‍💻' },
-        { id: 'contact', label: 'Contact', icon: '📧' }
+        { id: 'contact', label: 'Contact', icon: '📧' },
     ];
 
     const handleNavClick = (sectionId) => {
