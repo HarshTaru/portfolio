@@ -146,7 +146,7 @@ const Projects = () => {
               key={index}
               className={`group rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col transform hover:-translate-y-1 ${
                 darkMode ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-100'
-              } ${project.featured ? 'ring-2 ring-blue-500 ring-opacity-20' : ''}`}
+              } ${project.featured ? 'ring-2 ring-blue-500 ring-opacity-100' : ''}`}
             >
               <div className="relative overflow-hidden">
                 <img

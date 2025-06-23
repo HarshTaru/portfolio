@@ -48,7 +48,7 @@ const Hero = () => {
         }`}>
             
             
-            <div className="max-w-8xl mx-auto px-6 relative z-10 pt-32 pb-24">
+            <div className="max-w-6xl mx-auto px-6 relative z-10 pt-32 pb-24">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
                     
                     {/* Left Content */}
