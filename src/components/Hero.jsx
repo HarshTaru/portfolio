@@ -96,7 +96,9 @@ const Hero = () => {
                                         '5⭐ Python Coder',
                                         'System Design Enthusiast',
                                         'Problem Solver',
-                                        'Freelance Developer'
+                                        'Freelance Developer',
+                                        '8+ Production Applications Deployed',
+                                        '5+ Production Ready Projects'
                                     ]}
                                     loop={0}
                                     cursor
