@@ -15,8 +15,8 @@ const App = () => {
         <div className="overflow-x-hidden">
             <Navbar />
             <Hero />
-            <Projects />
             <Experience />
+            <Projects />
             <Skills />
             <Certifications />
             <About />

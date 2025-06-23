@@ -21,6 +21,36 @@ const Certifications = () => {
   const certifications = [
     // Software Testing
     {
+      name: "IBM Full Stack Software Developer Specialization",
+      category: "Web Development",
+      date: "Oct 2024",
+      status: "Certified",
+      credentialId: "DAJ1OS6MTQBF",
+      logo: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/bb/f5ced2bdd4437aa79f00eb1bf7fbf0/IBM-Logo-Blk---Square.png?auto=format%2Ccompress&dpr=1&w=80&h=80",
+      validUntil: "Lifetime",
+      verifyUrl: "https://www.coursera.org/account/accomplishments/specialization/DAJ1OS6MTQBF"
+    },
+    {
+      name: "Application Development using Microservices and Serverless",
+      category: "Backend",
+      date: "Aug 2024",
+      status: "Certified",
+      credentialId: "256N6H87KQIZ",
+      logo: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/bb/f5ced2bdd4437aa79f00eb1bf7fbf0/IBM-Logo-Blk---Square.png?auto=format%2Ccompress&dpr=1&w=80&h=80",
+      validUntil: "Lifetime",
+      verifyUrl: "https://www.coursera.org/account/accomplishments/verify/256N6H87KQIZ"
+    },
+    {
+      name: "Developing Back-End Apps with Node.js and Express",
+      category: "Backend",
+      date: "Aug 2024",
+      status: "Certified",
+      credentialId: "RT7AB69LT15K",
+      logo: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/bb/f5ced2bdd4437aa79f00eb1bf7fbf0/IBM-Logo-Blk---Square.png?auto=format%2Ccompress&dpr=1&w=80&h=80",
+      validUntil: "Lifetime",
+      verifyUrl: "https://www.coursera.org/account/accomplishments/verify/RT7AB69LT15K"
+    },
+    {
       name: "Fundamentals of Static Testing",
       provider: "Board Infinity",
       category: "Software Testing",
@@ -56,23 +86,12 @@ const Certifications = () => {
 
     // Full Stack Development
     {
-      name: "IBM Full Stack Software Developer Specialization",
-      category: "Web Development",
-      date: "Oct 2024",
-      status: "Certified",
-      credentialId: "DAJ1OS6MTQBF",
-      logo: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/bb/f5ced2bdd4437aa79f00eb1bf7fbf0/IBM-Logo-Blk---Square.png?auto=format%2Ccompress&dpr=1&w=80&h=80",
-      validUntil: "Lifetime",
-      verifyUrl: "https://www.coursera.org/account/accomplishments/specialization/DAJ1OS6MTQBF"
-    },
-    {
       name: "Full Stack Application Development Capstone Project",
       category: "Web Development",
       date: "Aug 2024",
       status: "Certified",
       credentialId: "6O9T88DFGC3M",
       logo: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/bb/f5ced2bdd4437aa79f00eb1bf7fbf0/IBM-Logo-Blk---Square.png?auto=format%2Ccompress&dpr=1&w=80&h=80",
-
       validUntil: "Lifetime",
       verifyUrl: "https://www.coursera.org/account/accomplishments/verify/6O9T88DFGC3M"
     },
@@ -131,26 +150,6 @@ const Certifications = () => {
     },
 
     // Microservices & Backend
-    {
-      name: "Application Development using Microservices and Serverless",
-      category: "Backend",
-      date: "Aug 2024",
-      status: "Certified",
-      credentialId: "256N6H87KQIZ",
-      logo: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/bb/f5ced2bdd4437aa79f00eb1bf7fbf0/IBM-Logo-Blk---Square.png?auto=format%2Ccompress&dpr=1&w=80&h=80",
-      validUntil: "Lifetime",
-      verifyUrl: "https://www.coursera.org/account/accomplishments/verify/256N6H87KQIZ"
-    },
-    {
-      name: "Developing Back-End Apps with Node.js and Express",
-      category: "Backend",
-      date: "Aug 2024",
-      status: "Certified",
-      credentialId: "RT7AB69LT15K",
-      logo: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/bb/f5ced2bdd4437aa79f00eb1bf7fbf0/IBM-Logo-Blk---Square.png?auto=format%2Ccompress&dpr=1&w=80&h=80",
-      validUntil: "Lifetime",
-      verifyUrl: "https://www.coursera.org/account/accomplishments/verify/RT7AB69LT15K"
-    },
 
     // Frontend Development
     {
@@ -302,7 +301,7 @@ const filteredCertifications = activeFilter === 'All'
 
 // Add state for view all toggle (add this to your component's state)
 const [showAll, setShowAll] = useState(false);
-const INITIAL_DISPLAY_COUNT = 6; // Show 6 certifications initially
+const INITIAL_DISPLAY_COUNT = 3; // Show 3 certifications initially
 
 // Determine which certifications to display
 const displayedCertifications = showAll 
@@ -325,10 +324,10 @@ const getStatusColor = (status) => {
 const getCategoryIcon = (category) => {
   const icons = {
     'All': '🏆',
+    'Backend': '⚙️',
+    'Cloud': '☁️',
     'Software Testing': '🧪',
     'Web Development': '🌐',
-    'Cloud': '☁️',
-    'Backend': '⚙️',
     'Database': '🗄️',
     'DevOps': '🚀',
     'Programming': '💻',
@@ -353,16 +352,62 @@ const getStatusIcon = (status) => {
 
 return (
   <section id="certifications">
-    <div className={`${darkMode ? 'bg-gray-900' : 'bg-gray-50'} min-h-screen py-20 transition-colors duration-300`}>
+    <div className={`${darkMode ? 'bg-gray-900' : 'bg-gray-50'} min-h-screen py-8 transition-colors duration-300`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <h2 className={`text-3xl sm:text-4xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-            Certifications & Credentials
+            Certifications
           </h2>
           <p className={`text-base sm:text-lg max-w-3xl mx-auto ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
             Professional certifications and achievements that validate my technical expertise
           </p>
         </div>
+              
+                      {/* Statistics */}
+                      <div className={`mb-16 p-2 sm:p-6 rounded-3xl border shadow-xl
+                        ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
+                        {/* <h3 className={`text-xl sm:text-2xl font-bold mb-6 text-center ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                          Certification Statistics
+                        </h3> */}
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+                          {[
+                            {
+                              label: "Total Certified",
+                              value: certifications.filter(c => c.status === 'Certified').length,
+                              icon: "🏆",
+                              color: "green"
+                            },
+                            {
+                              label: "Latest (2024)",
+                              value: certifications.filter(c => c.date.includes('2024')).length,
+                              icon: "🆕",
+                              color: "blue"
+                            }, 
+                            {
+                              label: "IBM Certifications",
+                              value: 15,
+                              icon: "🔷",
+                              color: "blue"
+                            },
+                            {
+                              label: "Cloud & AWS",
+                              value: certifications.filter(c => c.category === 'Cloud').length,
+                              icon: "☁️",
+                              color: "green"
+                            }
+                          ].map((stat, index) => (
+                            <div key={index} className="text-center">
+                              <div className={`text-2xl sm:text-3xl mb-2`}>{stat.icon}</div>
+                              <div className={`text-xl sm:text-2xl font-bold mb-1 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                {stat.value}
+                              </div>
+                              <div className={`text-xs sm:text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                                {stat.label}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
 
         {/* Filter Buttons */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
@@ -377,7 +422,7 @@ return (
                   setActiveFilter(category);
                   setShowAll(false); // Reset to collapsed view when changing filters
                 }}
-                className={`px-3 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-colors duration-150 flex items-center gap-1 sm:gap-2 text-sm sm:text-base ${isActive
+                className={`px-6 sm:px-3 py-3 sm:py-2 rounded-full font-medium transition-colors duration-150 flex items-center gap-1 sm:gap-2 text-sm sm:text-base ${isActive
                   ? 'bg-blue-600 text-white shadow-lg hover:bg-blue-700'
                   : darkMode
                     ? 'bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-700'
@@ -387,7 +432,7 @@ return (
                 <span className="text-sm sm:text-lg">{getCategoryIcon(category)}</span>
                 <span className="hidden sm:inline">{category}</span>
                 <span className="sm:hidden">{category === 'Web Development' ? 'Web' : category === 'Software Testing' ? 'Testing' : category === 'Data Science' ? 'Data' : category}</span>
-                <span className={`px-1.5 sm:px-2 py-0.5 rounded-full text-xs font-medium ${isActive
+                <span className={`px-0.5 sm:px-2 py-0.5 rounded-full text-xs font-medium ${isActive
                   ? 'bg-blue-500 text-white'
                   : darkMode
                     ? 'bg-gray-700 text-gray-300'
@@ -533,52 +578,6 @@ return (
               </span>
             )}
           </p>
-        </div>
-
-        {/* Statistics */}
-        <div className={`mt-16 p-6 sm:p-8 rounded-3xl border shadow-xl
-          ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
-          <h3 className={`text-xl sm:text-2xl font-bold mb-6 text-center ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-            Certification Statistics
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-            {[
-              {
-                label: "Total Certified",
-                value: certifications.filter(c => c.status === 'Certified').length,
-                icon: "🏆",
-                color: "green"
-              },
-              {
-                label: "Latest (2024)",
-                value: certifications.filter(c => c.date.includes('2024')).length,
-                icon: "🆕",
-                color: "blue"
-              }, 
-              {
-                label: "IBM Certifications",
-                value: 15,
-                icon: "🔷",
-                color: "blue"
-              },
-              {
-                label: "Cloud & AWS",
-                value: certifications.filter(c => c.category === 'Cloud').length,
-                icon: "☁️",
-                color: "green"
-              }
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className={`text-2xl sm:text-3xl mb-2`}>{stat.icon}</div>
-                <div className={`text-xl sm:text-2xl font-bold mb-1 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                  {stat.value}
-                </div>
-                <div className={`text-xs sm:text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </div>

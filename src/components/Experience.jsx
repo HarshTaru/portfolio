@@ -51,7 +51,7 @@ const Experience = () => {
   const { darkMode } = useTheme();
 
 return (
-    <section id="experience" className={`py-20 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'} transition-colors duration-300`}>
+    <section id="experience" className={`py-8 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'} transition-colors duration-300`}>
         <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-16">
                 <h2 className={`text-4xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
@@ -61,7 +61,37 @@ return (
                     Building scalable systems and delivering impactful solutions across Adtech, Fintech and mobile development.
                 </p>
             </div>
-
+            {/* Additional Info Section */}
+            <div className={`mb-16 text-center p-8 rounded-2xl border ${
+                darkMode 
+                    ? 'bg-gray-800/30 border-gray-700' 
+                    : 'bg-white/50 border-gray-200'
+            }`}>
+                <h3 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                    Key Achievements
+                </h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    {[
+                        { metric: '60%', label: 'Debug Reduction' },
+                        { metric: '95%', label: 'Uptime Improvement' },
+                        { metric: '10000+', label: 'SQL LOC' },
+                        { metric: '2', label: 'DB Migrations (MongoDB → Atlas, SQL → BigQuery)' }
+                    ].map((stat, index) => (
+                        <div key={index} className="text-center">
+                            <div className={`text-2xl font-bold mb-1 ${
+                                darkMode ? 'text-blue-400' : 'text-blue-600'
+                            }`}>
+                                {stat.metric}
+                            </div>
+                            <div className={`text-sm ${
+                                darkMode ? 'text-gray-400' : 'text-gray-600'
+                            }`}>
+                                {stat.label}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
             <div className="space-y-8">
                 {experienceList.map((exp, index) => (
                     <div
@@ -148,38 +178,6 @@ return (
                         </div>
                     </div>
                 ))}
-            </div>
-
-            {/* Additional Info Section */}
-            <div className={`mt-16 text-center p-8 rounded-2xl border ${
-                darkMode 
-                    ? 'bg-gray-800/30 border-gray-700' 
-                    : 'bg-white/50 border-gray-200'
-            }`}>
-                <h3 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                    Key Achievements
-                </h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    {[
-                        { metric: '60%', label: 'Debug Reduction' },
-                        { metric: '95%', label: 'Uptime Improvement' },
-                        { metric: '10000+', label: 'SQL LOC' },
-                        { metric: '2', label: 'DB Migrations (MongoDB → Atlas, SQL → BigQuery)' }
-                    ].map((stat, index) => (
-                        <div key={index} className="text-center">
-                            <div className={`text-2xl font-bold mb-1 ${
-                                darkMode ? 'text-blue-400' : 'text-blue-600'
-                            }`}>
-                                {stat.metric}
-                            </div>
-                            <div className={`text-sm ${
-                                darkMode ? 'text-gray-400' : 'text-gray-600'
-                            }`}>
-                                {stat.label}
-                            </div>
-                        </div>
-                    ))}
-                </div>
             </div>
         </div>
     </section>

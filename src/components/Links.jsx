@@ -104,12 +104,12 @@ const Links = () => {
     const allLinks = [...socialLinks, ...additionalLinks];
 
     return (
-        <section className={`py-20 transition-all duration-500 ${
+        <section className={`py-8 transition-all duration-500 ${
             darkMode ? 'bg-gray-900' : 'bg-gray-50'
         }`}>
             <div className="max-w-6xl mx-auto px-6">
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-5">
                     <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border mb-6 ${
                         darkMode 
                             ? 'bg-gray-800/80 border-gray-700 backdrop-blur-sm text-gray-300' 
@@ -243,7 +243,7 @@ const Links = () => {
                 <div className="text-center mt-16 space-y-4">
                     {/* Primary CTA */}
                     <button 
-                        className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 ${
+                        className={`inline-flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all duration-300 hover:scale-105 ${
                             darkMode
                                 ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700'
                                 : 'bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600'

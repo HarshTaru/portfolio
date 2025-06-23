@@ -12,7 +12,7 @@ const projectList = [
     demo: '', // Add when deployed
     visit: '', // Add when deployed
     image: 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=500&h=300&fit=crop',
-    // featured: true,
+    featured: true,
   },
   {
     name: 'JTrimURL - URL Shortener',
@@ -22,16 +22,7 @@ const projectList = [
     demo: '',
     visit: '', // Add when deployed
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop',
-    // featured: true,
-  },
-  {
-    name: 'TEXT2SQL with LangChain',
-    description: 'Streamlit application that converts natural language questions into SQL queries using Google Gemini model and executes them against databases.',
-    tech: ['Python', 'LangChain', 'Google Gemini', 'Streamlit', 'SQL', 'NLP'],
-    github: 'https://github.com/HarshTaru/Langchain-on-SQL-Database',
-    demo: '',
-    visit: '', // Add when deployed
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop',
+    featured: true,
   },
   {
     name: 'AI Medicine Kiosk - CURE AI',
@@ -41,7 +32,16 @@ const projectList = [
     demo: '',
     visit: '',
     image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&h=300&fit=crop',
-    // featured: true,
+    featured: true,
+  },
+  {
+    name: 'TEXT2SQL with LangChain',
+    description: 'Streamlit application that converts natural language questions into SQL queries using Google Gemini model and executes them against databases.',
+    tech: ['Python', 'LangChain', 'Google Gemini', 'Streamlit', 'SQL', 'NLP'],
+    github: 'https://github.com/HarshTaru/Langchain-on-SQL-Database',
+    demo: '',
+    visit: '', // Add when deployed
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop',
   },
   {
     name: 'Mental Health Chatbot - MindMender',
@@ -89,15 +89,15 @@ const projectList = [
     visit: '',
     image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&h=300&fit=crop',
   },
-  {
-    name: 'Spotify Clone',
-    description: 'Full-featured music player application replicating Spotify\'s interface and functionality with modern web technologies.',
-    tech: ['JavaScript', 'HTML5', 'CSS3', 'Web APIs', 'Responsive Design'],
-    github: 'https://github.com/HarshTaru/Spotify-Music-Player',
-    demo: '',
-    visit: '', // Add when deployed
-    image: 'https://images.unsplash.com/photo-1611339555312-e607c8352fd7?w=500&h=300&fit=crop',
-  },
+  // {
+  //   name: 'Spotify Clone',
+  //   description: 'Full-featured music player application replicating Spotify\'s interface and functionality with modern web technologies.',
+  //   tech: ['JavaScript', 'HTML5', 'CSS3', 'Web APIs', 'Responsive Design'],
+  //   github: 'https://github.com/HarshTaru/Spotify-Music-Player',
+  //   demo: '',
+  //   visit: '', // Add when deployed
+  //   image: 'https://images.unsplash.com/photo-1611339555312-e607c8352fd7?w=500&h=300&fit=crop',
+  // },
   {
     name: 'Weather App',
     description: 'Real-time weather application providing current conditions and forecasts with responsive design and API integration.',
@@ -107,29 +107,29 @@ const projectList = [
     visit: 'https://harshtaru.github.io/WeatherApp/', // Add when deployed
     image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=500&h=300&fit=crop',
   },
-  {
-    name: 'RateWise - Pricing Engine',
-    description: 'Smart pricing engine with dynamic rule application, API-first architecture, and intelligent pricing algorithms for business optimization.',
-    tech: ['Java', 'Spring Boot', 'Redis', 'MySQL', 'Microservices', 'REST API'],
-    github: 'https://github.com/HarshTaru/RateWise',
-    demo: '',
-    visit: '',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop',
-  },
+  // {
+  //   name: 'RateWise - Pricing Engine',
+  //   description: 'Smart pricing engine with dynamic rule application, API-first architecture, and intelligent pricing algorithms for business optimization.',
+  //   tech: ['Java', 'Spring Boot', 'Redis', 'MySQL', 'Microservices', 'REST API'],
+  //   github: 'https://github.com/HarshTaru/RateWise',
+  //   demo: '',
+  //   visit: '',
+  //   image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop',
+  // },
 ];
 
 const Projects = () => {
   const { darkMode } = useTheme();
 
   // Featured projects (first 6)
-  const featuredProjects = projectList.slice(0, 6);
+  const featuredProjects = projectList.slice(0, 3);
   const allProjects = projectList;
 
   const [showAll, setShowAll] = React.useState(false);
   const displayedProjects = showAll ? allProjects : featuredProjects;
 
   return (
-    <section id="work" className={`${darkMode ? 'bg-gray-900' : 'bg-gray-50'} py-20 transition-colors duration-300`}>
+    <section id="work" className={`${darkMode ? 'bg-gray-900' : 'bg-gray-50'} py-8 transition-colors duration-300`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className={`text-4xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>

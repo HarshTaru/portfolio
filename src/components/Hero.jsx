@@ -95,7 +95,8 @@ const Hero = () => {
                                         'Backend Developer',
                                         '5⭐ Python Coder',
                                         'System Design Enthusiast',
-                                        'Problem Solver'
+                                        'Problem Solver',
+                                        'Freelance Developer'
                                     ]}
                                     loop={0}
                                     cursor
@@ -158,16 +159,16 @@ const Hero = () => {
                         </div>
 
                         {/* Stats Grid */}
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 py-8">
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 py-6">
                             {[
-                                { number: '200+', label: 'LeetCode' },
-                                { number: '5⭐', label: 'Python' },
-                                { number: '6+', label: 'Months Exp' },
-                                { number: '15+', label: 'Projects' }
+                                { number: '200+', label: 'LeetCode Problems' },
+                                { number: '5+', label: 'Production Ready Projects' },
+                                { number: '10+', label: 'Months Experience' },
+                                { number: '8+', label: 'Production Applications Deployed' }
                             ].map((stat, index) => (
                                 <div
                                     key={index}
-                                    className={`text-center p-4 rounded-xl border transition-all duration-300 hover:scale-105 ${
+                                    className={`flex flex-col justify-center items-center text-center p-4 rounded-xl border transition-all duration-300 hover:scale-105 m-0 ${
                                         darkMode 
                                             ? 'bg-gray-800/50 border-gray-700 hover:bg-gray-800/70' 
                                             : 'bg-white/70 border-gray-200 hover:bg-white/90'
@@ -214,7 +215,7 @@ const Hero = () => {
 
                         {/* Tech Stack Icons */}
                         <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-8">
-                            {['Java', 'Python', 'Node.js', 'AWS', 'Docker'].map((tech, index) => (
+                            {['Java', 'Python', 'Node.js', 'GCP', 'Docker'].map((tech, index) => (
                                 <div
                                     key={tech}
                                     className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all duration-300 hover:scale-110 ${

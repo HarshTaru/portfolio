@@ -8,7 +8,7 @@ const Skills = () => {
   const filterCategories = [
     'All',
     'Frontend',
-    'Backend', 
+    'Backend',
     'Database',
     'Cloud',
     'Mobile',
@@ -16,175 +16,173 @@ const Skills = () => {
   ];
 
   const skills = [
-    // Frontend
-    { 
-      name: "React.js", 
-      category: "Frontend",
-      image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-      projects: "5+ projects", 
-      level: "Advanced"
-    },
-    { 
-      name: "JavaScript", 
-      category: "Frontend",
-      image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
-      projects: "8+ projects", 
-      level: "Advanced"
-    },
-    { 
-      name: "HTML5", 
-      category: "Frontend",
-      image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
-      projects: "10+ projects", 
-      level: "Advanced"
-    },
-    { 
-      name: "CSS3", 
-      category: "Frontend",
-      image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
-      projects: "10+ projects", 
-      level: "Advanced"
-    },
-    
     // Backend
-    { 
-      name: "Java", 
-      category: "Backend",
-      image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
-      projects: "4+ projects", 
-      level: "Advanced"
-    },
-    { 
-      name: "Python", 
+    {
+      name: "Python",
       category: "Backend",
       image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
-      projects: "6+ projects", 
-      level: "Advanced"
+      // projects: "6+ projects", 
+      // level: "Advanced"
     },
-    { 
-      name: "Node.js", 
+    {
+      name: "Node.js",
       category: "Backend",
       image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
-      projects: "5+ projects", 
-      level: "Advanced"
+      // projects: "5+ projects", 
+      // level: "Advanced"
     },
-    { 
-      name: "Spring Boot", 
+    {
+      name: "Java",
+      category: "Backend",
+      image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+      // projects: "4+ projects", 
+      // level: "Advanced"
+    },
+    {
+      name: "Spring Boot",
       category: "Backend",
       image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
-      projects: "3+ projects", 
-      level: "Advanced"
+      // projects: "3+ projects", 
+      // level: "Advanced"
     },
-    { 
-      name: "Express.js", 
+    {
+      name: "Express.js",
       category: "Backend",
       image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
-      projects: "4+ projects", 
-      level: "Advanced"
+      // projects: "4+ projects", 
+      // level: "Advanced"
     },
-    { 
-      name: "Flask", 
+    {
+      name: "Flask",
       category: "Backend",
       image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg",
-      projects: "2+ projects", 
-      level: "Intermediate"
+      // projects: "2+ projects", 
+      // level: "Intermediate"
     },
 
     // Database
-    { 
-      name: "MongoDB", 
+    {
+      name: "MongoDB",
       category: "Database",
       image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
-      projects: "5+ projects", 
-      level: "Advanced"
+      // projects: "5+ projects", 
+      // level: "Advanced"
     },
-    { 
-      name: "PostgreSQL", 
+    {
+      name: "PostgreSQL",
       category: "Database",
       image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
-      projects: "3+ projects", 
-      level: "Advanced"
+      // projects: "3+ projects", 
+      // level: "Advanced"
     },
-    { 
-      name: "MySQL", 
+    {
+      name: "MySQL",
       category: "Database",
       image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
-      projects: "3+ projects", 
-      level: "Intermediate"
+      // projects: "3+ projects", 
+      // level: "Intermediate"
     },
-    { 
-      name: "Firebase", 
+    {
+      name: "Firebase",
       category: "Database",
       image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg",
-      projects: "2+ projects", 
-      level: "Advanced"
+      // projects: "2+ projects", 
+      // level: "Advanced"
     },
-
+    // Frontend
+    {
+      name: "React.js",
+      category: "Frontend",
+      image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+      // projects: "5+ projects", 
+      // level: "Advanced"
+    },
+    {
+      name: "JavaScript",
+      category: "Frontend",
+      image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+      // projects: "8+ projects", 
+      // level: "Advanced"
+    },
+    {
+      name: "HTML5",
+      category: "Frontend",
+      image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+      // projects: "10+ projects", 
+      // level: "Advanced"
+    },
+    {
+      name: "CSS3",
+      category: "Frontend",
+      image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+      // projects: "10+ projects", 
+      // level: "Advanced"
+    },
     // Cloud
-    { 
-      name: "AWS", 
+    {
+      name: "AWS",
       category: "Cloud",
       image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
-      projects: "2+ projects", 
-      level: "Intermediate"
+      // projects: "2+ projects", 
+      // level: "Intermediate"
     },
-    { 
-      name: "Google Cloud", 
+    {
+      name: "Google Cloud",
       category: "Cloud",
       image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg",
-      projects: "2+ projects", 
-      level: "Intermediate"
+      // projects: "2+ projects", 
+      // level: "Intermediate"
     },
-    { 
-      name: "Docker", 
+    {
+      name: "Docker",
       category: "Cloud",
       image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
-      projects: "3+ projects", 
-      level: "Intermediate"
+      // projects: "3+ projects", 
+      // level: "Intermediate"
     },
-    { 
-      name: "Kubernetes", 
+    {
+      name: "Kubernetes",
       category: "Cloud",
       image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg",
-      projects: "1+ project", 
-      level: "Beginner"
+      // projects: "1+ project", 
+      // level: "Beginner"
     },
 
     // Mobile
-    { 
-      name: "Flutter", 
+    {
+      name: "Flutter",
       category: "Mobile",
       image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg",
-      projects: "2+ projects", 
-      level: "Intermediate"
+      // projects: "2+ projects", 
+      // level: "Intermediate"
     },
 
     // Tools
-    { 
-      name: "Git", 
+    {
+      name: "Git",
       category: "Tools",
       image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
-      projects: "All projects", 
-      level: "Advanced"
+      // projects: "All projects", 
+      // level: "Advanced"
     },
-    { 
-      name: "GitHub", 
+    {
+      name: "GitHub",
       category: "Tools",
       image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
-      projects: "All projects", 
-      level: "Advanced"
+      // projects: "All projects", 
+      // level: "Advanced"
     },
-    { 
-      name: "Linux", 
+    {
+      name: "Linux",
       category: "Tools",
       image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg",
-      projects: "Server projects", 
-      level: "Intermediate"
+      // projects: "Server projects", 
+      // level: "Intermediate"
     }
   ];
 
-  const filteredSkills = activeFilter === 'All' 
-    ? skills 
+  const filteredSkills = activeFilter === 'All'
+    ? skills
     : skills.filter(skill => skill.category === activeFilter);
 
   const getLevelColor = (level) => {
@@ -214,7 +212,7 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className={`${darkMode ? 'bg-gray-900' : 'bg-gray-50'} py-20 transition-colors duration-300`}>
+    <section id="skills" className={`${darkMode ? 'bg-gray-900' : 'bg-gray-50'} py-8 transition-colors duration-300`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className={`text-4xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
@@ -230,28 +228,26 @@ const Skills = () => {
           {filterCategories.map((category, index) => {
             const isActive = activeFilter === category;
             const count = category === 'All' ? skills.length : skills.filter(s => s.category === category).length;
-            
+
             return (
               <button
                 key={category}
                 onClick={() => setActiveFilter(category)}
-                className={`px-6 py-3 rounded-full font-medium transition-colors duration-150 flex items-center gap-2 ${
-                  isActive
+                className={`px-6 py-2 rounded-full font-medium transition-colors duration-150 flex items-center gap-2 ${isActive
                     ? 'bg-blue-600 text-white shadow-lg hover:bg-blue-700'
-                    : darkMode 
+                    : darkMode
                       ? 'bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-700'
                       : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 shadow-sm'
-                }`}
+                  }`}
               >
                 <span className="text-lg">{getCategoryIcon(category)}</span>
                 <span>{category}</span>
-                <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
-                  isActive 
-                    ? 'bg-blue-500 text-white' 
-                    : darkMode 
+                <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${isActive
+                    ? 'bg-blue-500 text-white'
+                    : darkMode
                       ? 'bg-gray-700 text-gray-300'
                       : 'bg-gray-200 text-gray-600'
-                }`}>
+                  }`}>
                   {count}
                 </span>
               </button>
@@ -260,7 +256,7 @@ const Skills = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-6">
           {filteredSkills.map((skill, index) => (
             <div
               key={index}
@@ -269,13 +265,13 @@ const Skills = () => {
             >
               {/* Background Effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-2xl"></div>
-              
+
               {/* Skill Image/Icon */}
               <div className="relative z-10 flex justify-center mb-4">
                 <div className={`w-16 h-16 p-3 rounded-2xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-200
                   ${darkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
-                  <img 
-                    src={skill.image} 
+                  <img
+                    src={skill.image}
                     alt={skill.name}
                     className="w-10 h-10 object-contain transition-transform duration-200 group-hover:scale-110"
                     onError={(e) => {
@@ -283,7 +279,7 @@ const Skills = () => {
                       e.target.nextSibling.style.display = 'flex';
                     }}
                   />
-                  <div 
+                  <div
                     className={`w-10 h-10 rounded-lg items-center justify-center font-bold text-sm hidden
                       ${darkMode ? 'bg-gray-600 text-white' : 'bg-gray-200 text-gray-700'}`}
                   >
@@ -299,24 +295,24 @@ const Skills = () => {
               </h3>
 
               {/* Level Badge */}
-              <div className="relative z-10 flex justify-center mb-2">
+              {/* <div className="relative z-10 flex justify-center mb-2">
                 <span className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 ${getLevelColor(skill.level)}`}>
                   {skill.level}
                 </span>
-              </div>
+              </div> */}
 
               {/* Projects */}
-              <p className={`relative z-10 text-center text-xs ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+              {/* <p className={`relative z-10 text-center text-xs ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                 {skill.projects}
-              </p>
+              </p> */}
 
               {/* Category Badge */}
-              <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              {/* <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                 <span className={`px-2 py-1 rounded-full text-xs font-medium
                   ${darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'}`}>
                   {skill.category}
                 </span>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
@@ -333,8 +329,8 @@ const Skills = () => {
           </p>
         </div>
 
-        {/* Project Experience Section */}
-        <div className={`mt-16 p-8 rounded-3xl border shadow-xl
+        {/* Project Experience Section
+        <div className={`mt-16 p-8  mb-5 rounded-3xl border shadow-xl
           ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
           <h3 className={`text-2xl font-bold mb-6 text-center ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             Project Experience & Implementations
@@ -370,7 +366,7 @@ const Skills = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
