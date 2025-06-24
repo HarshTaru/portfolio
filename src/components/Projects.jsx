@@ -8,7 +8,7 @@ const projectList = [
     name: 'Pawsitive Connect - Pet Adoption Platform',
     description: 'AI-powered pet adoption platform using VGG16 model to match pets with adopters. Features Flutter mobile app, Firebase backend, and intelligent matching algorithms.',
     tech: ['Flutter', 'Firebase', 'AI/ML', 'VGG16', 'Dart', 'Python'],
-    github: 'https://github.com/HarshTaru/PawsitiveConnect',
+    github: 'https://github.com/HarshTaru/PawsitiveConnectApp',
     demo: '', // Add when deployed
     visit: '', // Add when deployed
     image: 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=500&h=300&fit=crop',
