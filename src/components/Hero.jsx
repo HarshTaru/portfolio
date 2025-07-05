@@ -44,7 +44,7 @@ const socialLinks = [
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
                     
                     {/* Left Content */}
-                    <div className={`lg:w-1/2 text-center lg:text-left space-y-8 transition-all duration-1000 ${
+                    <div className={`lg:w-1/2 text-center lg:text-left space-y-5 transition-all duration-1000 ${
                         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
                         
@@ -115,7 +115,9 @@ const socialLinks = [
                             <span className="font-semibold text-orange-500">distributed systems</span>.
                         </p>
 
-                       <div className="grid grid-cols-4 gap-6">
+                       {/* <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"> */}
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 py-0">
+
     {socialLinks.map((links, index) => (
         <a href={links.url} target="_blank" key={index}>
             <div
