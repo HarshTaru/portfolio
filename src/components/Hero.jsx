@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { Typewriter } from 'react-simple-typewriter';
-import { iconName } from '@fortawesome/free-brands-svg-icons/faAccessibleIcon';
 const Hero = () => {
     const { darkMode } = useTheme();
     const [isVisible, setIsVisible] = useState(false);
@@ -9,28 +8,37 @@ const Hero = () => {
     useEffect(() => {
         setIsVisible(true);
     }, []);
-const socialLinks = [
-    {
-        name: 'LinkedIn',
-        url: 'https://www.linkedin.com/in/harshtaru',
-        icon: '💼',
-    },
-    {
-        name: 'GitHub',
-        url: 'https://github.com/HarshTaru',
-        icon: '🐙',
-    },
-    {
-        name: 'LeetCode',
-        url: 'https://leetcode.com/u/CodefindsHarsh/',
-        icon: '🧠',
-    },
-    {
-        name: 'Credly',
-        url: 'https://www.credly.com/users/harsh-taru',
-        icon: '📜',
-    }
-];
+
+    const socialLinks = [
+        {
+            name: 'LinkedIn',
+            url: 'https://www.linkedin.com/in/harshtaru',
+            icon: '💼',
+            color: 'from-blue-600 to-blue-700',
+            hoverColor: 'hover:from-blue-700 hover:to-blue-800'
+        },
+        {
+            name: 'GitHub',
+            url: 'https://github.com/HarshTaru',
+            icon: '🐱',
+            color: 'from-gray-700 to-gray-800',
+            hoverColor: 'hover:from-gray-800 hover:to-gray-900'
+        },
+        {
+            name: 'LeetCode',
+            url: 'https://leetcode.com/u/CodefindsHarsh/',
+            icon: '🧩',
+            color: 'from-orange-500 to-orange-600',
+            hoverColor: 'hover:from-orange-600 hover:to-orange-700'
+        },
+        {
+            name: 'Credly',
+            url: 'https://www.credly.com/users/harsh-taru',
+            icon: '🏆',
+            color: 'from-green-500 to-green-600',
+            hoverColor: 'hover:from-green-600 hover:to-green-700'
+        }
+    ];
 
     return (
         <section className={`relative overflow-hidden min-h-screen flex items-center transition-all duration-500 ${
@@ -78,7 +86,7 @@ const socialLinks = [
                             </h1>
 
                             {/* Typewriter Effect */}
-                            <div className={`text-2xl sm:text-2xl lg:text-3xl font-semibold align-middle ${
+                            <div className={`text-2xl sm:text-3xl lg:text-4xl font-semibold min-h-[3rem] ${
                                 darkMode ? 'text-gray-200' : 'text-gray-800'
                             }`}>
                                 <Typewriter
@@ -103,7 +111,7 @@ const socialLinks = [
                         </div>
 
                         {/* Description */}
-                        <p className={`text-lg sm:text-xl leading-relaxed max-w-2xl py-0 ${
+                        <p className={`text-lg sm:text-xl leading-relaxed max-w-2xl ${
                             darkMode ? 'text-gray-300' : 'text-gray-600'
                         }`}>
                             Passionate about building{' '}
@@ -115,32 +123,42 @@ const socialLinks = [
                             <span className="font-semibold text-orange-500">distributed systems</span>.
                         </p>
 
-                       <div className="grid grid-cols-4 gap-6">
-    {socialLinks.map((links, index) => (
-        <a href={links.url} target="_blank" key={index}>
-            <div
-                className={`flex flex-row justify-center items-center text-center p-4 rounded-2xl border transition-all duration-300 hover:scale-105 hover:shadow-xl m-0
-                    ${
-                        darkMode 
-                            ? 'bg-gradient-to-br from-slate-700 to-slate-800 border-slate-600 hover:from-slate-800 hover:to-slate-900' 
-                            : 'bg-gradient-to-br from-slate-100 to-slate-200 border-slate-300 hover:from-slate-200 hover:to-slate-300'
-                    }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-            >
-                <div className={`text-2xl font-bold mb-1 ${
-                    darkMode ? 'text-white' : 'text-blue-900'
-                }`}>
-                    {links.icon}
-                </div>
-                <div className={`text-sm ${
-                    darkMode ? 'text-gray-300' : 'text-gray-700'
-                }`}>
-                    {links.name}
-                </div>
-            </div>
-        </a>
-    ))}
-</div>
+                        {/* Animated Social Links */}
+                        <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+                            {socialLinks.map((link, index) => (
+                                <a
+                                    key={link.name}
+                                    href={link.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`group relative inline-flex items-center gap-2 px-4 py-3 rounded-xl text-white font-semibold text-sm transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 bg-gradient-to-r ${link.color} ${link.hoverColor} shadow-lg hover:shadow-xl`}
+                                    style={{ 
+                                        animationDelay: `${index * 0.1}s`,
+                                        animation: isVisible ? 'slideInUp 0.6s ease-out forwards' : 'none'
+                                    }}
+                                >
+                                    <span className="text-lg group-hover:animate-bounce">
+                                        {link.icon}
+                                    </span>
+                                    <span className="relative overflow-hidden">
+                                        <span className="block transition-transform duration-300 group-hover:-translate-y-full">
+                                            {link.name}
+                                        </span>
+                                        <span className="absolute top-full left-0 transition-transform duration-300 group-hover:-translate-y-full">
+                                            {link.name}
+                                        </span>
+                                    </span>
+                                    
+                                    {/* Animated background effect */}
+                                    <div className="absolute inset-0 rounded-xl bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                                    
+                                    {/* Ripple effect */}
+                                    <div className="absolute inset-0 rounded-xl overflow-hidden">
+                                        <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transform scale-0 group-hover:scale-100 transition-all duration-500 rounded-full"></div>
+                                    </div>
+                                </a>
+                            ))}
+                        </div>
 
                         {/* Stats Grid */}
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 py-6">
