@@ -5,7 +5,7 @@ const experienceList = [
   {
     title: 'SDE Intern',
     company: 'OnlineSales.ai',
-    date: 'January 2025 – Present',
+    date: 'January 2025 – July 2025',
     location: 'Pune, Maharashtra, India',
     points: [
       'Engineered a Python-based changelog consumer to ingest real-time events from Debezium Kafka and internal microservices, improving observability and reducing manual debugging effort by 60%.',
