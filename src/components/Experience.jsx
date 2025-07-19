@@ -3,8 +3,9 @@ import { useTheme } from '../context/ThemeContext';
 
 const experienceList = [
   {
+    logo : "https://media.licdn.com/dms/image/v2/D4D0BAQHFLNDUHlUNpA/company-logo_100_100/company-logo_100_100/0/1707890979149?e=1755734400&v=beta&t=Yd8JZnfeBi48q-FQ7Okt5b3ZUat56UeNhMAFMppXzvE",
     title: 'SDE Intern',
-    company: 'OnlineSales.ai',
+    company: 'Osmos.ai',
     date: 'January 2025 – July 2025',
     location: 'Pune, Maharashtra, India',
     points: [
@@ -20,6 +21,7 @@ const experienceList = [
     highlights: ['60% debugging reduction', '40% efficiency increase', '95% downtime reduction', '20% campaign success boost']
   },
   {
+    logo:"https://media.licdn.com/dms/image/v2/D4D0BAQFCTVy5yyYsQA/company-logo_100_100/B4DZT_AC0FGkAQ-/0/1739444990338/shresag_studios_logo?e=1755734400&v=beta&t=yrdvB8TSQIsw-3acO-2JPEeu0JkfzCPSae3k4opGels",
     title: 'App Developer',
     company: 'Shresag Studios',
     date: 'June 2024 – August 2024',
@@ -33,6 +35,7 @@ const experienceList = [
     highlights: ['Flutter Development', 'Mobile Apps', 'UI/UX Implementation']
   },
   {
+    logo :"https://media.licdn.com/dms/image/v2/C4E0BAQEA0V9yzn_dPg/company-logo_100_100/company-logo_100_100/0/1646199475973/edunetfoundation_logo?e=1755734400&v=beta&t=YBRwuo3WbhJHwjJWsWTUSHu_J8V0F2T78SVvD3uMY40",
     title: 'Intern',
     company: 'Edunet Foundation',
     date: 'June 2023 – July 2023',
@@ -109,6 +112,10 @@ return (
                     >
                         {/* Header Section */}
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                            <div className='flex items-start gap-4'>
+                            <div className="flex items-center align-center justify-center">
+                                <img src={exp.logo} alt={`${exp.company} logo`} className="mt-2 w-12 h-12 object-cover" />
+                                </div>
                             <div>
                                 <h3 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                                     {exp.title}
@@ -123,6 +130,8 @@ return (
                                     </p>
                                 </div>
                             </div>
+                            </div>
+                            {/* Date Section */}
                             <div className={`mt-2 md:mt-0 px-4 py-2 rounded-full text-sm font-medium ${
                                 darkMode 
                                     ? 'bg-gray-700 text-gray-300' 
