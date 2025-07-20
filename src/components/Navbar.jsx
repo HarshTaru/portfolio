@@ -106,6 +106,7 @@ const Navbar = () => {
     ];
 
     const handleNavClick = (sectionId) => {
+        console.log("Clicked section:", sectionId);
         setMenuOpen(false);
         setActiveSection(sectionId);
         
