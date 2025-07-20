@@ -5,7 +5,7 @@ const experienceList = [
   {
     logo : "https://media.licdn.com/dms/image/v2/D4D0BAQHFLNDUHlUNpA/company-logo_100_100/company-logo_100_100/0/1707890979149?e=1755734400&v=beta&t=Yd8JZnfeBi48q-FQ7Okt5b3ZUat56UeNhMAFMppXzvE",
     title: 'SDE Intern',
-    company: 'Osmos.ai',
+    company: 'Osmos',
     date: 'January 2025 – July 2025',
     location: 'Pune, Maharashtra, India',
     points: [

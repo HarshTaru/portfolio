@@ -102,7 +102,7 @@ const Hero = () => {
               >
                 <Typewriter
                   words={[
-                    "SDE Intern @ OnlineSales.ai",
+                    "SDE Intern @ Osmos",
                     "Backend Developer",
                     "5⭐ Python Coder",
                     "System Design Enthusiast",

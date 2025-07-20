@@ -124,7 +124,7 @@ const About = () => {
     },
     journey: {
       title: 'My Learning Journey',
-      content: 'BTech Graduate in Information Technology at VIIT Pune (2025). Gained practical experience as an SDE Intern at OnlineSales.ai, working with real-time data processing, microservices, and cloud technologies.'
+      content: 'BTech Graduate in Information Technology at VIIT Pune (2025). Gained practical experience as an SDE Intern at Osmos, working with real-time data processing, microservices, and cloud technologies.'
     },
     passion: {
       title: 'What Drives Me',
