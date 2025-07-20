@@ -35,7 +35,7 @@ const Navbar = () => {
     // Track active section based on scroll position
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ['work', 'skills', 'about', 'certifications', 'contact'];
+            const sections = ['experience', 'work', 'skills', 'about', 'certifications', 'contact'];
             const scrollPosition = window.scrollY + 100;
 
             for (const section of sections) {
@@ -106,7 +106,6 @@ const Navbar = () => {
     ];
 
     const handleNavClick = (sectionId) => {
-        console.log("Clicked section:", sectionId);
         setMenuOpen(false);
         setActiveSection(sectionId);
         
