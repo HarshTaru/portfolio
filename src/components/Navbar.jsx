@@ -35,7 +35,7 @@ const Navbar = () => {
     // Track active section based on scroll position
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ['experience', 'work', 'skills', 'about', 'certifications', 'contact'];
+            const sections = ['experience', 'education', 'work', 'skills', 'about', 'certifications', 'contact'];
             const scrollPosition = window.scrollY + 100;
 
             for (const section of sections) {
@@ -98,6 +98,7 @@ const Navbar = () => {
 
     const navLinks = [
         { id: 'experience', label: 'Experience', icon: '🧑‍💼' },
+        { id: 'education', label: 'Education', icon: '🎓' },
         { id: 'work', label: 'Projects', icon: '💼' },
         { id: 'skills', label: 'Skills', icon: '⚡' },
         { id: 'certifications', label: 'Certifications', icon: '🏆' },
