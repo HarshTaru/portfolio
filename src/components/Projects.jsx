@@ -17,7 +17,7 @@ const projectList = [
   {
     name: 'JTrimURL - URL Shortener',
     description: 'Production-ready platform for shortening URLs with user accounts, analytics dashboard, and comprehensive admin panel for managing links.',
-    tech: ['Java', 'Spring Boot', 'MongoDB', 'React', 'REST API'],
+    tech: ['Java', 'Spring Boot', 'PostgreSQL', 'React', 'REST API'],
     github: 'https://github.com/HarshTaru/JTrimURL',
     demo: 'https://jtrimurl.onrender.com/',
     visit: 'https://jtrimurl.onrender.com/', // Add when deployed
