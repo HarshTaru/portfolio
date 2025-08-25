@@ -174,7 +174,7 @@ const Hero = () => {
             {/* Stats Grid - Enhanced */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-8">
               {[
-                { number: "315+", label: "LeetCode Problems", color: "from-orange-400 to-red-500" },
+                { number: "325+", label: "LeetCode Problems", color: "from-orange-400 to-red-500" },
                 { number: "5+", label: "Production Ready Projects", color: "from-green-400 to-blue-500" },
                 { number: "10+", label: "Months Experience", color: "from-purple-400 to-pink-500" },
                 { number: "8+", label: "Production Applications", color: "from-blue-400 to-indigo-500" },
