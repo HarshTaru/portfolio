@@ -2,8 +2,26 @@ import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 
 const experienceList = [
+    {
+    logo : "public/godaddy_logo.jpeg",
+    title: 'Software Development Engineer 1',
+    company: 'GoDaddy',
+    date: 'September 2025 – Present',
+    location: 'Pune, Maharashtra, India',
+    points: [
+    //   'Engineered a Python-based changelog consumer to ingest real-time events from Debezium Kafka and internal microservices, improving observability and reducing manual debugging effort by 60%.',
+    //   'Developed secure, role-based APIs in Java (Hades authentication service), enabling admins to search users by agency and reset user credentials, increasing internal operational efficiency by 40%.',
+    //   'Implemented audit logging by adding created_by and updated_by fields across critical DB tables in a Hibernate-powered service, ensuring traceability for over 5 million records.',
+    //   'Built and deployed a Python-based cloud function that automated incentive distribution using dynamic rule processing, eliminating manual workflows and reducing payout errors to near zero.',
+    //   'Led the migration of production data from self-hosted MongoDB to MongoDB Atlas, improving database reliability and reducing downtime by 95%.',
+    //   'Designed and executed robust ETL pipelines to transfer large datasets from legacy SQL systems to BigQuery, supporting faster analytics and cost-effective storage.',
+    //   'Authored 10+ advanced SQL reports (1,000–1,200 LOC each) as part of a full dashboard migration, powering KPIs and marketing insights across business units.',
+    //   'Designed a custom task handler framework to automate actions such as campaign budget increases and product recommendations, boosting campaign success rates by an estimated 20%.'
+    ],
+    // highlights: ['60% debugging reduction', '40% efficiency increase', '95% downtime reduction', '20% campaign success boost']
+  },
   {
-    logo : "https://media.licdn.com/dms/image/v2/D4D0BAQHFLNDUHlUNpA/company-logo_100_100/company-logo_100_100/0/1707890979149?e=1755734400&v=beta&t=Yd8JZnfeBi48q-FQ7Okt5b3ZUat56UeNhMAFMppXzvE",
+    logo : "public/osmos.jpeg",
     title: 'SDE Intern',
     company: 'Osmos',
     date: 'January 2025 – July 2025',
@@ -21,7 +39,7 @@ const experienceList = [
     highlights: ['60% debugging reduction', '40% efficiency increase', '95% downtime reduction', '20% campaign success boost']
   },
   {
-    logo:"https://media.licdn.com/dms/image/v2/D4D0BAQFCTVy5yyYsQA/company-logo_100_100/B4DZT_AC0FGkAQ-/0/1739444990338/shresag_studios_logo?e=1755734400&v=beta&t=yrdvB8TSQIsw-3acO-2JPEeu0JkfzCPSae3k4opGels",
+    logo:"public/shresag_studios_logo.jpeg",
     title: 'App Developer',
     company: 'Shresag Studios',
     date: 'June 2024 – August 2024',
@@ -35,7 +53,7 @@ const experienceList = [
     highlights: ['Flutter Development', 'Mobile Apps', 'UI/UX Implementation']
   },
   {
-    logo :"https://media.licdn.com/dms/image/v2/C4E0BAQEA0V9yzn_dPg/company-logo_100_100/company-logo_100_100/0/1646199475973/edunetfoundation_logo?e=1755734400&v=beta&t=YBRwuo3WbhJHwjJWsWTUSHu_J8V0F2T78SVvD3uMY40",
+    logo :"public/edunetfoundation_logo.jpeg",
     title: 'Intern',
     company: 'Edunet Foundation',
     date: 'June 2023 – July 2023',
