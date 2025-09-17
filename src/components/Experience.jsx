@@ -3,7 +3,7 @@ import { useTheme } from '../context/ThemeContext';
 
 const experienceList = [
     {
-    logo : "public/godaddy_logo.jpeg",
+    logo : "/godaddy_logo.jpeg",
     title: 'Software Development Engineer 1',
     company: 'GoDaddy',
     date: 'September 2025 – Present',
@@ -21,7 +21,7 @@ const experienceList = [
     // highlights: ['60% debugging reduction', '40% efficiency increase', '95% downtime reduction', '20% campaign success boost']
   },
   {
-    logo : "public/osmos.jpeg",
+    logo : "/osmos.jpeg",
     title: 'SDE Intern',
     company: 'Osmos',
     date: 'January 2025 – July 2025',
@@ -39,7 +39,7 @@ const experienceList = [
     highlights: ['60% debugging reduction', '40% efficiency increase', '95% downtime reduction', '20% campaign success boost']
   },
   {
-    logo:"public/shresag_studios_logo.jpeg",
+    logo:"/shresag_studios_logo.jpeg",
     title: 'App Developer',
     company: 'Shresag Studios',
     date: 'June 2024 – August 2024',
@@ -53,7 +53,7 @@ const experienceList = [
     highlights: ['Flutter Development', 'Mobile Apps', 'UI/UX Implementation']
   },
   {
-    logo :"public/edunetfoundation_logo.jpeg",
+    logo :"/edunetfoundation_logo.jpeg",
     title: 'Intern',
     company: 'Edunet Foundation',
     date: 'June 2023 – July 2023',
