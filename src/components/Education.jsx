@@ -143,7 +143,7 @@ const Education = () => {
     <section
       id="education"
       className={`py-20 relative overflow-hidden transition-colors duration-300 ${
-        darkMode ? "bg-gray-900" : "bg-white"
+        darkMode ? "bg-gray-900" : "bg-gray-50"
       }`}
     >
       {/* Background Elements

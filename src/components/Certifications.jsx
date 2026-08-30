@@ -306,7 +306,7 @@ const [showAll, setShowAll] = useState(false);
   const latestYear = Math.max(
     ...certifications.map(c => parseInt((c.date.match(/\d{4}/) || [0])[0], 10))
   );
-const INITIAL_DISPLAY_COUNT = 4; // Show 4 certifications initially
+const INITIAL_DISPLAY_COUNT = 3; // Show 3 certifications initially
 
 // Determine which certifications to display
 const displayedCertifications = showAll 
@@ -357,7 +357,7 @@ const getStatusIcon = (status) => {
 
 return (
   <section id="certifications">
-    <div className={`${darkMode ? 'bg-gray-900' : 'bg-gray-50'} min-h-screen transition-colors duration-300`}>
+    <div className={`${darkMode ? 'bg-gray-900' : 'bg-gray-50'}  py-20 min-h-screen transition-colors duration-300`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10">
           <h2 className={`text-3xl sm:text-4xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
@@ -383,7 +383,7 @@ return (
                               color: "green"
                             },
                             {
-                              label: `Latest (${latestYear})`,
+                              label: `Latest`,
                               value: certifications.filter(c => c.date.includes(String(latestYear))).length,
                               icon: "🆕",
                               color: "blue"

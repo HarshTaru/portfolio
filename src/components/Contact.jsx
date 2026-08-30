@@ -85,7 +85,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className={`py-2 relative overflow-hidden transition-colors duration-300 ${
+      className={` relative overflow-hidden transition-colors duration-300 ${
         darkMode ? 'bg-gray-900' : 'bg-gray-50'
       }`}
     >

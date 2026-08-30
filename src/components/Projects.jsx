@@ -43,7 +43,7 @@ const projectList = [
     visit: '', // Add when deployed
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop',
   
-    featured: true,
+    // featured: true,
   },
   {
     name: 'Mental Health Chatbot - MindMender',
