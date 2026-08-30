@@ -32,6 +32,11 @@ const Skills = () => {
       // level: "Advanced"
     },
     {
+      name: "Go",
+      category: "Backend",
+      image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg",
+    },
+    {
       name: "Java",
       category: "Backend",
       image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
@@ -185,18 +190,6 @@ const Skills = () => {
     ? skills
     : skills.filter(skill => skill.category === activeFilter);
 
-  const getLevelColor = (level) => {
-    switch (level) {
-      case 'Advanced':
-        return darkMode ? 'bg-green-900 text-green-200' : 'bg-green-100 text-green-700';
-      case 'Intermediate':
-        return darkMode ? 'bg-yellow-900 text-yellow-200' : 'bg-yellow-100 text-yellow-700';
-      case 'Beginner':
-        return darkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-700';
-      default:
-        return darkMode ? 'bg-gray-900 text-gray-200' : 'bg-gray-100 text-gray-700';
-    }
-  };
 
   const getCategoryIcon = (category) => {
     const icons = {
@@ -212,7 +205,7 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className={`${darkMode ? 'bg-gray-900' : 'bg-gray-50'} py-20 transition-colors duration-300`}>
+    <section id="skills" className={`${darkMode ? 'bg-gray-900' : 'bg-gray-50'} transition-colors duration-300`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className={`text-4xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
@@ -225,7 +218,7 @@ const Skills = () => {
 
         {/* Filter Buttons */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {filterCategories.map((category, index) => {
+          {filterCategories.map((category) => {
             const isActive = activeFilter === category;
             const count = category === 'All' ? skills.length : skills.filter(s => s.category === category).length;
 

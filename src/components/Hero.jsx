@@ -102,14 +102,12 @@ const Hero = () => {
               >
                 <Typewriter
                   words={[
-                    "Ex SDE Intern @ Osmos",
+                    "SDE 2 @ GoDaddy",
+                    "Ex-SDE Intern @ Osmos.ai",
                     "Backend Developer",
-                    "5⭐ Python Coder",
                     "System Design Enthusiast",
                     "Problem Solver",
                     "Freelance Developer",
-                    "8+ Production Applications Deployed",
-                    "5+ Production Ready Projects",
                   ]}
                   loop={0}
                   cursor
@@ -133,10 +131,9 @@ const Hero = () => {
               </span>{" "}
               using{" "}
               <span className="font-semibold text-purple-500">
-                Java, Python, and Node.js
+                Java, Python, Go and Node.js
               </span>
               .
-              <br />
               Experienced with{" "}
               <span className="font-semibold text-green-500">
                 cloud-native architectures
@@ -172,12 +169,10 @@ const Hero = () => {
             </div>
 
             {/* Stats Grid - Enhanced */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-8">
+            <div className="grid grid-cols-2 sm:grid-cols-2 gap-4 py-8">
               {[
                 { number: "325+", label: "LeetCode Problems", color: "from-orange-400 to-red-500" },
-                { number: "5+", label: "Production Ready Projects", color: "from-green-400 to-blue-500" },
-                { number: "10+", label: "Months Experience", color: "from-purple-400 to-pink-500" },
-                { number: "8+", label: "Production Applications", color: "from-blue-400 to-indigo-500" },
+                { number: "2+", label: "Years Experience", color: "from-purple-400 to-pink-500" },
               ].map((stat, index) => (
                 <div
                   key={index}
@@ -239,6 +234,8 @@ const Hero = () => {
                 { name: "Java", color: "from-orange-400 to-red-500" },
                 { name: "Python", color: "from-blue-400 to-yellow-500" },
                 { name: "Node.js", color: "from-green-400 to-green-600" },
+                { name: "Go", color: "from-cyan-400 to-sky-600" },
+                { name: "AWS", color: "from-yellow-400 to-orange-600" },
                 { name: "GCP", color: "from-blue-400 to-blue-600" },
                 { name: "Docker", color: "from-blue-500 to-indigo-600" }
               ].map((tech, index) => (

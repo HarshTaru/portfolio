@@ -42,6 +42,8 @@ const projectList = [
     demo: '',
     visit: '', // Add when deployed
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop',
+  
+    featured: true,
   },
   {
     name: 'Mental Health Chatbot - MindMender',
@@ -121,8 +123,8 @@ const projectList = [
 const Projects = () => {
   const { darkMode } = useTheme();
 
-  // Featured projects (first 6)
-  const featuredProjects = projectList.slice(0, 3);
+  // Driven by the `featured` flag so the badge and the default set cannot drift apart.
+  const featuredProjects = projectList.filter(project => project.featured);
   const allProjects = projectList;
 
   const [showAll, setShowAll] = React.useState(false);
@@ -140,7 +142,7 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:gap-8 grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))]">
           {displayedProjects.map((project, index) => (
             <div
               key={index}

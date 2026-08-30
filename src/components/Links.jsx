@@ -104,29 +104,29 @@ const Links = () => {
     const allLinks = [...socialLinks, ...additionalLinks];
 
     return (
-        <section className={`py-20 transition-all duration-500 ${
+        <section className={` transition-all duration-500 ${
             darkMode ? 'bg-gray-900' : 'bg-gray-50'
         }`}>
             <div className="max-w-6xl mx-auto px-6">
                 {/* Section Header */}
                 <div className="text-center mb-5">
-                    <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border mb-6 ${
+                    {/* <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border mb-6 ${
                         darkMode 
                             ? 'bg-gray-800/80 border-gray-700 backdrop-blur-sm text-gray-300' 
                             : 'bg-white/80 border-gray-200 backdrop-blur-sm text-gray-700'
                     }`}>
                         <span className="animate-pulse">🔗</span>
                         Connect & Explore
-                    </div>
+                    </div> */}
                     
-                    <h2 className={`text-4xl md:text-5xl font-bold mb-4 ${
+                    {/* <h2 className={`text-4xl md:text-5xl font-bold mb-4 ${
                         darkMode ? 'text-white' : 'text-gray-900'
                     }`}>
                         Let's{' '}
                         <span className="bg-gradient-to-r from-blue-500 via-purple-600 to-blue-700 text-transparent bg-clip-text">
                             Connect
                         </span>
-                    </h2>
+                    </h2> */}
                     
                     <p className={`text-lg max-w-2xl mx-auto ${
                         darkMode ? 'text-gray-300' : 'text-gray-600'

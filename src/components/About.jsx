@@ -3,12 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faDownload,
   faPaperPlane,
-  faCode,
-  faRocket,
-  faLightbulb,
-  faCoffee,
   faGlobe,
-  faAward,
   faChartLine,
   faUsers,
   faGraduationCap
@@ -110,21 +105,14 @@ const About = () => {
     }
   ];
 
-  const stats = [
-    { icon: faCode, number: '200+', label: 'LeetCode Solved' },
-    { icon: faGlobe, number: '15+', label: 'Projects Built' },
-    { icon: faAward, number: '5+', label: 'Certifications' },
-    { icon: faRocket, number: '6+', label: 'Months Experience' },
-  ];
-
   const tabContent = {
     skills: {
       title: 'Technical Arsenal',
-      content: 'Proficient in Java, Python, and Node.js with hands-on experience in distributed systems and cloud platforms. Strong foundation in DSA with 200+ LeetCode problems solved and 5⭐ Python coding skills on HackerRank.'
+      content: 'Proficient in Java, Python, Go and Node.js with hands-on experience in distributed systems, AWS and cloud-native platforms. Strong foundation in DSA with 200+ LeetCode problems solved and 5⭐ Python coding skills on HackerRank.'
     },
     journey: {
       title: 'My Learning Journey',
-      content: 'BTech Graduate in Information Technology at VIIT Pune (2025). Gained practical experience as an SDE Intern at Osmos, working with real-time data processing, microservices, and cloud technologies.'
+      content: 'BTech Graduate in Information Technology at VIIT Pune (2025). Started out as an SDE Intern at Osmos working on real-time data processing, microservices and cloud technologies, then joined GoDaddy as a Software Development Engineer 1 in September 2025 and was promoted to SDE 2 a year later.'
     },
     passion: {
       title: 'What Drives Me',
@@ -176,18 +164,11 @@ const About = () => {
         <div className="text-center lg:text-left mb-16">
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}>
-            <div className="mb-6">
-              <span className={`inline-block px-4 py-2 rounded-full text-sm font-medium ${darkMode ? 'bg-blue-500/20 text-blue-300' : 'bg-blue-100 text-blue-600'
-                }`}>
-                🚀 Fresher | Ready to Code
-              </span>
-            </div>
-
             <h2 className={`text-4xl lg:text-5xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-900'
               }`}>
               From Student to{' '}
               <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-                Developer
+                SDE 2
               </span>
             </h2>
 

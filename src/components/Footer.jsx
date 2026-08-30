@@ -10,7 +10,7 @@ const Footer = () => {
         darkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-700'
       }`}
     >
-      <p>&copy; 2025 Harsh Taru. All rights reserved.</p>
+      <p>&copy; 2026 Harsh Taru. All rights reserved.</p>
     </footer>
   );
 };
