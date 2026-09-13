@@ -325,7 +325,7 @@ const Hero = () => {
                 <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                 <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                 <div className={`ml-2 text-xs font-medium ${darkMode ? "text-gray-400" : "text-gray-600"}`}>
-                  ~ harsh-terminal
+                  ~ terminal
                 </div>
               </div>
               <div
@@ -336,7 +336,7 @@ const Hero = () => {
                 
                 <div className="flex items-center gap-2">
                   <span className="text-blue-400">$</span>
-                  <span>const developer = new Harsh();</span>
+                  <span>const harsh = new Developer();</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-blue-400">$</span>
@@ -346,10 +346,10 @@ const Hero = () => {
                   <span className="text-blue-400">$</span>
                   <span>// Let's create something awesome! 🚀</span>
                 </div>
-                {/* <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2">
                   <span className="text-blue-400">$</span>
                   <span className="animate-pulse">|</span>
-                </div> */}
+                </div>
               </div>
             </div>
           </div>
